@@ -22,10 +22,8 @@ public class InternDetailsService {
 
     public Interns createInternDetails(InternDetailsRequest request) {
 
-        InternDetails details = new InternDetails(
-                request.getAddress(),
-                request.getZipCode()
-        );
+        InternDetails details = new InternDetails(request.getAddress());
+        
         Optional<Interns> optionalIntern = internRepository.findById(request.getId());
 
         Interns intern = null;

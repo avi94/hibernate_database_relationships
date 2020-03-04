@@ -1,5 +1,6 @@
 package com.databaserelationship.dbrelationonetomany.resources.request;
 
+import com.databaserelationship.dbrelationonetomany.resources.embed.Address;
 import com.databaserelationship.dbrelationonetomany.resources.entity.Interns;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -12,8 +13,5 @@ public class InternDetailsRequest {
     private Long id;
 
     @JsonProperty("address")
-    private String address;
-
-    @JsonProperty("zip_code")
-    private Integer zipCode;
+    private Address address;
 }

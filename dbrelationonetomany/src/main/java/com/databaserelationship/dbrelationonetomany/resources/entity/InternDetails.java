@@ -1,5 +1,6 @@
 package com.databaserelationship.dbrelationonetomany.resources.entity;
 
+import com.databaserelationship.dbrelationonetomany.resources.embed.Address;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -19,17 +20,14 @@ public class InternDetails {
     private Long id;
 
     @JsonProperty("address")
-    private String address;
-
-    @JsonProperty("zip_code")
-    private Integer zipCode;
+    @Embedded
+    private Address address;
 
     @OneToOne(mappedBy = "internDetails")
     @JsonIgnoreProperties("details")
     private Interns intern;
 
-    public InternDetails(String address, Integer zipCode) {
+    public InternDetails(Address address) {
         this.address = address;
-        this.zipCode = zipCode;
     }
 }
